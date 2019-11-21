@@ -9,14 +9,11 @@
       <%= f.text_field :gold, placeholder: "Gold" %>
       <%= f.hidden_field :id %>
     </div>
-    <%# <%= render 'statuses/new' %> 
     <div>
       <%= f.fields_for :status do |s| %>
         
         <%= s.text_field :life, placeholder: "Life" %>
         <%= s.hidden_field :id %>
-        <%# <%= s.text_field :life, name: "character[status_attributes][life]" %> 
-        <%# <%= s.hidden_field :id, value: s.object.id %> 
       <% end %>
     </div>
     <div>
