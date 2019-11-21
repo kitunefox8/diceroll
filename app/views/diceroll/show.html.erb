@@ -1,0 +1,23 @@
+<div class="battle"　type="button">
+<%= link_to "戦う","/diceroll/show", id: "battle"%>
+</div>
+<div class="ran-away">
+<%= link_to "逃げる","/" %>
+</div>
+
+<div>
+<h2>あなたのダイス</h2>
+</div>
+<div class="saikoro" id="saikoro"><%= user = @user_num %></div>
+<div>
+<h2>敵のダイス</h2>
+</div>
+<div class="saikoro" id="saikoro"><%= enemy = @enemy_num %></div>
+<% if user==enemy %> 
+<p>引き分け</p>
+<% elsif user>enemy %>
+<p>++勝利しました++</p>
+<% else user<enemy %>
+<p>-負けました-</p>
+<p>**GAME OVER**</p>
+<% end %>

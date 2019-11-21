@@ -1,0 +1,16 @@
+<%# <div class="monster">
+  <h2  id="monster">ゴブリンが現われた</h2>
+</div>
+<div class="start">
+<%= image_tag 'gettyimages-165590923-612x612.jpg', class: 'hoge' %>
+  <%# <%= link_to "戦闘開始","/diceroll/show", id: "start"%> 
+<%# <%= image_tag 'gettyimages-165590923-612x612.jpg', class: 'hoge' %> 
+<%# </div> %> 
+<div>
+  
+  <div>
+    <%= link_to "#{@characters.name}", edit_character_path(@characters.id) %>
+    <%= link_to '削除',  character_path(@characters.id), method: :delete%>
+  </div>
+    
+</div>

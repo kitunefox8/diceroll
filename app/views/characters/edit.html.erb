@@ -1,0 +1,24 @@
+<div>
+  <%= form_with(model: @characters, local: true) do |f| %>
+    <div>
+     <input type="hidden" name="character[user_ids][]" value=<%="#{current_user.id}"%>>
+      <%= f.text_field :name, placeholder: "Name" %>
+      <%= f.hidden_field :id %>
+    </div>
+    <div>
+      <%= f.text_field :gold, placeholder: "Gold" %>
+      <%= f.hidden_field :id %>
+    </div>
+    <div>
+      <%= f.fields_for :status do |s| %>
+        <%= s.text_field :life %>
+        <%= s.hidden_field :id %>
+      <% end %>
+    </div>
+    <div>
+      <%= f.submit "UPDATE" %>
+      <%= link_to "戻る", characters_path %>
+    </div>
+      
+  <% end %>
+</div>
