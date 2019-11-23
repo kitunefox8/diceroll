@@ -2,21 +2,20 @@
   <%= form_with(model: @characters, local: true) do |f| %>
     <div>
      <input type="hidden" name="character[user_ids][]" value=<%="#{current_user.id}"%>>
+      <%= f.label :name, "Name"%>
       <%= f.text_field :name, placeholder: "Name" %>
       <%= f.hidden_field :id %>
     </div>
     <div>
+      <%= f.label :gold, "Gold"%>
       <%= f.text_field :gold, placeholder: "Gold" %>
       <%= f.hidden_field :id %>
     </div>
-    <%# <%= render 'statuses/new' %> 
     <div>
       <%= f.fields_for :status do |s| %>
-        
+        <%= s.label :life, "Life" %>
         <%= s.text_field :life, placeholder: "Life" %>
         <%= s.hidden_field :id %>
-        <%# <%= s.text_field :life, name: "character[status_attributes][life]" %> 
-        <%# <%= s.hidden_field :id, value: s.object.id %> 
       <% end %>
     </div>
     <div>
