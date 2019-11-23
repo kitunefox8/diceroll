@@ -1,23 +1,18 @@
 <% if user_signed_in? %>
-<%# <div class="monster">
-  <h2  id="monster">ゴブリンが現われた</h2>
-</div>
-<div class="start">
-<%= image_tag 'gettyimages-165590923-612x612.jpg', class: 'hoge' %>
-  <%# <%= link_to "戦闘開始","/diceroll/show", id: "start"%> 
-<%# <%= image_tag 'gettyimages-165590923-612x612.jpg', class: 'hoge' %> 
-<%# </div> %> 
 <div>
   <% @characters.each do |character| %>
   <div>
     <%= link_to "#{character.name}", character_path(character.id) %>
 
   </div>
-</div>
   <% end %>
-<%= link_to "キャラ作成", new_character_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+</div>
+  <%= link_to "キャラ作成", new_character_path %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<div>
+  <%= link_to "ダイスバトル", diceroll_index_path %>
+</div>
 <% else %>
-<%= link_to "ログイン", new_user_session_path, class: 'post' %>
-<%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+  <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+  <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
 <% end %>
